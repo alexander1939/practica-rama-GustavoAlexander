@@ -1,0 +1,16 @@
+4041  git checkout -b feature/validacion
+4042  echo "function validarEmail(email) { return email.includes('@'); }" >> funciones.js
+4043  git add .
+4044  git commit -m "feat: añadir validación de email"
+4045  git checkout desarrollo
+4046  git checkout -b respaldo-15-10-25-GAMC
+4047  git push -u origin respaldo-15-10-25-Gamc
+4048  echo "## Respaldo $(date +%d/%m/%Y)" >> README.md
+4049  echo "\n- Rama: respaldo-15-10-25-GAMC" >> README.md
+4050  echo "\n- Contiene: desarrollo hasta función de validación" >> README.md
+4051  git checkout desarrollo
+4052  git merge feature/validacion
+4053  git branch -d feature/validacion
+4054  git add .
+4055  git commit -m "Limpieza y documentación final del código"
+4056  git push origin desarrollo
